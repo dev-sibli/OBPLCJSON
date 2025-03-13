@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Special Offers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="https://www.onebank.com.bd/home/colbrd/"><img src="images/ologo.png" alt="OBPLC Logo" width="150"></a> <!-- Replace with your logo path -->
+            </div>
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <ul class="nav-links">
+                <li><a href="https://www.onebank.com.bd/home/colbrd/">Home</a></li>
+                <li><a href="https://www.onebank.com.bd/home/colbrd/emi/">Smart EMI</a></li>
+                <li><a href="https://www.onebank.com.bd/home/colbrd/discount-offer/">Discount Offer</a></li>
+                <li><a href="https://www.onebank.com.bd/home/contact/">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="headline">
+        <div class="headcontainer">
+            <img src="images/web-cover.jpg" alt="">
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="shopping">Shopping</button>
+            <button class="tab-btn" data-tab="dining">dining </button>
+            <button class="tab-btn" data-tab="travel">Travel</button>
+            <!-- <button class="tab-btn" data-tab="hotels">Hotels & Resorts</button> -->
+        </div>
+        
+        <div class="tab-content active" id="shopping">
+            <div class="card-container" id="shopping-container">
+                <!-- Products will be inserted here dynamically -->
+            </div>
+        </div>
+        <div class="tab-content" id="dining">
+            <div class="card-container" id="dining-container">
+                <!-- Products will be inserted here dynamically -->
+            </div>
+        </div>
+        <div class="tab-content" id="travel">
+            <div class="card-container" id="travel-container">
+                <!-- Products will be inserted here dynamically -->
+            </div>
+        </div>
+        <div class="tab-content" id="hotels">
+            <div class="card-container" id="hotels-container">
+                <!-- Products will be inserted here dynamically -->
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Ramadan Special Offers. All rights reserved.</p>
+            <p>Terms & Conditions Apply.</p>
+        </footer>
+    </div>
+    
+    <!-- Template for product cards -->
+    <template id="product-template">
+        <div class="card">
+            <a href="" class="gallery-item" data-fancybox="gallery">
+                <div class="card-img">
+                    <img src="" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title"></h3>
+                    <p class="card-description"></p>
+                </div>
+            </a>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script type="module" src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

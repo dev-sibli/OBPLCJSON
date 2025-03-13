@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e67e22;
+    --accent-color: #8e44ad;
+    --light-color: #f9f9f9;
+    --dark-color: #333;
+    --ramadan-gold: #d4af37;
+    --ramadan-purple: #5d3a7a;
+}
+
+* {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+
+
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+.tab-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-btn.active {
+    background-color: #d1020f;
+    color: white;
+    border: 2px solid #ffffff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card-description {
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.countdown-container {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--ramadan-purple);
+    color: white;
+    border-radius: 10px;
+}
+
+.countdown-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-value {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    background-color: #b20000;
+    color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .countdown-value {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .countdown {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-value {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Fancybox custom styles */
+.fancybox__container {
+    --fancybox-bg: rgba(24, 24, 27, 0.95);
+    --fancybox-btn-bg: transparent;
+    --fancybox-btn-bg-hover: rgba(255, 255, 255, 0.1);
+}
+
+.fancybox__caption {
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.gallery-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Style navigation arrows */
+.fancybox__button--prev,
+.fancybox__button--next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.fancybox__button--prev {
+    left: 10px;
+}
+
+.fancybox__button--next {
+    right: 10px;
+}
+
+.fancybox__button--prev:hover,
+.fancybox__button--next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Ensure lightbox content fits image size */
+.fancybox__content {
+    padding: 0;
+    background: transparent;
+}
+
+.fancybox__image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.headcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Vertically centers them */
+    margin: 5px;
+    padding: 5px 0;
+    border-radius: 10px;
+    
+}
+
+.headtext {
+    flex: 1; /* Allows text to take available space */
+}
+
+.headimage {
+    margin-left: 20px; /* Adds space between text and image */
+    
+}
+
+.headline h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #FFF;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.headline p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #FFF;
+    text-align: left;
+}
+/* Navigation Bar Styles */
+header {
+    background-color: #ffffff; /* light background for the navbar */
+    padding: 10px 10px; /* Padding for the navbar */
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+}
+
+.logo img {
+    max-height: 100px; /* Limit logo height */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display links in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0); /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+
+.nav-links a:hover {
+    text-decoration: none; /* Underline on hover */
+    color: #b20000;
+}
+
+/* Add styles for mobile menu button */
+.menu-button {
+    display: none; /* Hidden by default */
+    background-color: #b20000; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Show menu button on mobile */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block; /* Show button on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #ffffff; /* Background color */
+        position: absolute; /* Positioning */
+        top: 60px; /* Below the navbar */
+        left: 0; /* Align to the left */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+}
