@@ -1,5 +1,3 @@
-import productData from '/data.js';
-
 // Ensure that the DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
     // Tab functionality
@@ -18,9 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(tabId).classList.add('active');
         });
     });
-    
+
+    // Fetch the product data dynamically
+    async function loadProductData() {
+        try {
+            const response = await fetch('https://cdn.jsdelivr.net/gh/dev-sibli/OBPLCJSON@main/data.js');
+            const data = await response.json();  // Assuming it's a JSON file
+            renderProducts('shopping', data);  // Pass data to render function
+        } catch (error) {
+            console.error('Error loading product data:', error);
+        }
+    }
+
     // Render products
-    function renderProducts(category) {
+    function renderProducts(category, productData) {
         const container = document.getElementById(`${category}-container`);
         const template = document.getElementById('product-template');
         const products = productData[category];
@@ -58,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize with shopping products
-    renderProducts('shopping');
+    // Load products initially
+    loadProductData();
 
     // Update products when tab changes
     tabBtns.forEach(btn => {
@@ -100,5 +109,4 @@ document.addEventListener('DOMContentLoaded', () => {
             PREV: "Previous",
         }
     });
-    
 });
