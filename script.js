@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Set up Fancybox
             link.dataset.fancybox = category; // Separate galleries per category
-            link.dataset.caption = `${product.title} - ${product.description}`;
+            link.dataset.caption = `${product.title}`;
 
             container.appendChild(clone);
         });
